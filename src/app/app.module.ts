@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header/header.component';
 import { FormComponent } from './form/form/form.component';
+import { TodoListComponent } from './todo-list/todo-list/todo-list.component';
+
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,11 +18,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FormComponent
+    FormComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

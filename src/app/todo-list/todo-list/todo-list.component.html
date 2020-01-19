@@ -1,0 +1,27 @@
+<div class="todoList">
+<h2>
+  Todos
+  <mat-icon></mat-icon>
+</h2>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let list of lists">
+    <mat-expansion-panel-header class="todoList__head">
+      <mat-panel-title>
+        飲み会
+      </mat-panel-title>
+      <mat-panel-description>
+        2020/01/30
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  <p>内容が入ります。内容が入ります。内容が入ります。内容が入ります。</p>
+<button mat-flat-button color="warn" class="todoList__btn">
+  <span>削除</span>
+  <mat-icon>warning</mat-icon>
+</button>
+<button mat-stroked-button color="primary" class="todoList__btn">
+  <span>編集</span>
+  <mat-icon>edit</mat-icon>
+</button>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
