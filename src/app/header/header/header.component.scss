@@ -1,0 +1,10 @@
+@import 'mixins';
+@import '~@angular/material/theming';
+
+
+.header {
+  @include mat-elevation(5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
