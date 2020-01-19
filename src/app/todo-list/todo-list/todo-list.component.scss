@@ -1,0 +1,15 @@
+@import 'mixins';
+
+.todoList {
+  h2 {
+    text-align: center;
+  }
+  &__head {
+    padding: 8px;
+  }
+  &__btn {
+    padding: 0 16px;
+    margin: 4px;
+  }
+}
+
