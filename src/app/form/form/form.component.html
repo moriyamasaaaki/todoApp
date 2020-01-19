@@ -1,0 +1,18 @@
+<form class="form">
+  <div>
+  <mat-form-field class="form__item">
+    <mat-label>タイトル</mat-label>
+    <input matInput placeholder="タイトル">
+  </mat-form-field>
+  </div>
+<div>
+  <mat-form-field class="form__item">
+    <textarea matInput placeholder="内容" matTextareaAutosize #autosize="matTextareaAutosize" matAutosizeMinRows="1" matAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+</div>
+
+<button mat-raised-button color="primary">
+<span>追加</span>
+<mat-icon>add</mat-icon>
+</button>
+</form>
