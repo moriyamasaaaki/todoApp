@@ -7,13 +7,13 @@
   <mat-expansion-panel *ngFor="let list of lists">
     <mat-expansion-panel-header class="todoList__head">
       <mat-panel-title>
-        飲み会
+        {{ todo.title }}
       </mat-panel-title>
       <mat-panel-description>
-        2020/01/30
+        {{todo.createdAt}}
       </mat-panel-description>
     </mat-expansion-panel-header>
-  <p>内容が入ります。内容が入ります。内容が入ります。内容が入ります。</p>
+  <p>{{todo.content}}</p>
 <button mat-flat-button color="warn" class="todoList__btn">
   <span>削除</span>
   <mat-icon>warning</mat-icon>
