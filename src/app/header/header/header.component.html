@@ -1,5 +1,6 @@
 <mat-toolbar class="header" color="primary">
   <h1>Todo管理</h1>
-  <button mat-raised-button color="accent">Login</button>
+  <button mat-raised-button color="accent" (click)="login()" *ngIf="!(user$ | async)">Login</button>
+  <button mat-raised-button color="basic" (click)="logout()" *ngIf="user$ | async">Logout</button>
 </mat-toolbar>
 
