@@ -20,7 +20,7 @@ export class TodoService {
     const id = this.db.createId();
     return this.db
     .doc(`todos/${id}`)
-    .set(todo)
+    .set({id, ...todo})
     .then(() => {
       this.snackBar.open('Todoを作成しました。', null, {
         duration: 3000
@@ -32,5 +32,22 @@ export class TodoService {
     return this.db
     .collection<Todo>(`todos`)
     .valueChanges();
+  }
+
+  getTodoList(id: string): Observable<Todo> {
+    return this.db
+    .doc<Todo>(`todos/${id}`)
+    .valueChanges();
+  }
+
+  deleteTodo(id: string): Promise<void> {
+    return this.db
+    .doc(`todos/${id}`)
+    .delete()
+    .then(() => {
+      this.snackBar.open('todosを削除しました。', null, {
+        duration: 3000
+      });
+    });
   }
 }
