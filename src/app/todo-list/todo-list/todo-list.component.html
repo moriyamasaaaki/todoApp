@@ -1,16 +1,17 @@
+<ng-container *ngIf="todos$ | async as todos">
 <div class="todoList" *ngIf="user$ | async">
 <h2>
   Todos
   <mat-icon></mat-icon>
 </h2>
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let list of lists">
+<mat-accordion *ngFor="let todo of todos">
+  <mat-expansion-panel>
     <mat-expansion-panel-header class="todoList__head">
       <mat-panel-title>
         {{ todo.title }}
       </mat-panel-title>
       <mat-panel-description>
-        {{todo.createdAt}}
+        {{ todo.createdAt.toDate() | date: 'yyy年MM月dd日' }}
       </mat-panel-description>
     </mat-expansion-panel-header>
   <p>{{todo.content}}</p>
@@ -25,3 +26,4 @@
   </mat-expansion-panel>
 </mat-accordion>
 </div>
+</ng-container>

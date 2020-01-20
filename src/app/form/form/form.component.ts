@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { TodoService } from 'src/app/services/todo.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-form',
@@ -22,7 +24,9 @@ export class FormComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private todoService: TodoService,
+    private auth: AuthService
   ) {}
 
   ngOnInit() {
@@ -30,6 +34,14 @@ export class FormComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    this.todoService.createTodo(
+      {
+        userId: this.auth.uid,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        ...this.form.value
+      }
+    );
   }
 
 }

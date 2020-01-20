@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from 'src/app/interfaces/todo';
 import { AuthService } from 'src/app/services/auth.service';
+import { TodoService } from 'src/app/services/todo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,17 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class TodoListComponent implements OnInit {
   user$ = this.auth.afUser$;
+  todos$: Observable<Todo[]> = this.todos.getTodo();
 
-  @Input() todo: Todo = {
-                    userId: 'aaa',
-                    title: 'カラオケ',
-                    createdAt: new Date(),
-                    content: 'ラウワンいきます。'
-                  };
-
-  lists = new Array(5).fill(null);
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private todos: TodoService
   ) { }
 
   ngOnInit() {
