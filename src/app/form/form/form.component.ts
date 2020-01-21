@@ -13,9 +13,9 @@ export class FormComponent implements OnInit {
   categories = ['仕事',　'プライベート', 'その他'];
 
   form = this.fb.group({
-    title: ['', [Validators.required]],
-    content: ['', [Validators.required]],
-    category: ['', [Validators.required]]
+    title: [''],
+    content: [''],
+    category: ['']
   });
 
   get titleControl() {
@@ -50,6 +50,7 @@ export class FormComponent implements OnInit {
         ...this.form.value
       }
     );
+    this.form.reset();
   }
 
 }
