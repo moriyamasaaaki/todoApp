@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -39,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatTabsModule,
     MatDialogModule,
+    MatSelectModule
   ]
 })
 export class HomeModule { }

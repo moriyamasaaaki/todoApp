@@ -10,9 +10,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class FormComponent implements OnInit {
 
+  categories = ['仕事',　'プライベート', 'その他'];
+
   form = this.fb.group({
     title: ['', [Validators.required]],
-    content: ['', [Validators.required]]
+    content: ['', [Validators.required]],
+    category: ['', [Validators.required]]
   });
 
   get titleControl() {
@@ -22,6 +25,11 @@ export class FormComponent implements OnInit {
   get contentControl() {
     return this.form.get('content') as FormControl;
   }
+
+  get categoryControl() {
+    return this.form.get('category') as FormControl;
+  }
+
 
   constructor(
     private fb: FormBuilder,
