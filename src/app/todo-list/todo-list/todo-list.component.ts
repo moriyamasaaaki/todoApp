@@ -13,7 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class TodoListComponent implements OnInit {
   user$ = this.auth.afUser$;
   id: string;
-  todos$: Observable<Todo[]> = this.todos.getTodo();
+  todos$: Observable<Todo[]> = this.todos.getCategoryWorks();
+  todosSecond$: Observable<Todo[]> = this.todos.getCategoryPrivates();
+  todosThird$: Observable<Todo[]> = this.todos.getCategoryOthers();
 
   constructor(
     private auth: AuthService,
