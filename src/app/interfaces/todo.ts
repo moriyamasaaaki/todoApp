@@ -3,5 +3,6 @@ export interface Todo {
   id: string;
   title: string;
   createdAt: Date;
+  category: string;
   content: string;
 }
