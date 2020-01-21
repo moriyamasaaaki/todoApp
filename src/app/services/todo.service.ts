@@ -22,7 +22,7 @@ export class TodoService {
     .doc(`todos/${id}`)
     .set({id, ...todo})
     .then(() => {
-      this.snackBar.open('Todoを作成しました。', null, {
+      this.snackBar.open(`${todo.category}Todoを作成しました。`, null, {
         duration: 3000
       });
     });
@@ -50,4 +50,30 @@ export class TodoService {
       });
     });
   }
+
+  getCategoryWorks(): Observable<Todo[]> {
+    return this.db
+    .collection<Todo>('todos', ref => {
+      return ref.where('category', '==', '仕事');
+    })
+    .valueChanges();
+  }
+
+  getCategoryPrivates(): Observable<Todo[]> {
+    return this.db
+      .collection<Todo>('todos', ref => {
+        return ref.where('category', '==', 'プライベート');
+      })
+      .valueChanges();
+  }
+
+  getCategoryOthers(): Observable<Todo[]> {
+    return this.db
+      .collection<Todo>('todos', ref => {
+        return ref.where('category', '==', 'その他');
+      })
+      .valueChanges();
+  }
+
+
 }

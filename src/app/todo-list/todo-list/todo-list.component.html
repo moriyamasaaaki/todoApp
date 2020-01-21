@@ -6,20 +6,16 @@
           <mat-expansion-panel *ngFor="let todo of todos">
             <mat-expansion-panel-header class="todoList__head">
               <mat-panel-title>
-                {{ todo.title }},{{todo.id}}
+                {{ todo.title }}
               </mat-panel-title>
               <mat-panel-description>
                 {{ todo.createdAt.toDate() | date: 'yyy年MM月dd日' }}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>{{todo.content}}</p>
-            <button mat-flat-button color="warn" class="todoList__btn" (click)="delete()">
-              <span>削除</span>
-              <mat-icon>warning</mat-icon>
-            </button>
             <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
-              <span>編集</span>
-              <mat-icon>edit</mat-icon>
+              <span>詳細へ</span>
+              <mat-icon>chevron_right</mat-icon>
             </button>
           </mat-expansion-panel>
         </mat-accordion>
@@ -28,10 +24,10 @@
   </mat-tab>
 
   <mat-tab label="プライベート">
-    <!-- <ng-container *ngIf="todos$ | async as todos">
+    <ng-container *ngIf="todosSecond$ | async as todosSecond">
       <div class="todoList" *ngIf="user$ | async">
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let todo of todos">
+          <mat-expansion-panel *ngFor="let todo of todosSecond">
             <mat-expansion-panel-header class="todoList__head">
               <mat-panel-title>
                 {{ todo.title }}
@@ -41,25 +37,21 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>{{todo.content}}</p>
-            <button mat-flat-button color="warn" class="todoList__btn">
-              <span>削除</span>
-              <mat-icon>warning</mat-icon>
-            </button>
-            <button mat-stroked-button color="primary" class="todoList__btn">
-              <span>編集</span>
-              <mat-icon>edit</mat-icon>
+            <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
+              <span>詳細へ</span>
+              <mat-icon>chevron_right</mat-icon>
             </button>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
-    </ng-container> -->
+    </ng-container>
   </mat-tab>
 
   <mat-tab label="その他">
-    <!-- <ng-container *ngIf="todos$ | async as todos">
+    <ng-container *ngIf="todosThird$ | async as todosThird">
       <div class="todoList" *ngIf="user$ | async">
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let todo of todos">
+          <mat-expansion-panel *ngFor="let todo of todosThird">
             <mat-expansion-panel-header class="todoList__head">
               <mat-panel-title>
                 {{ todo.title }}
@@ -69,17 +61,13 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>{{todo.content}}</p>
-            <button mat-flat-button color="warn" class="todoList__btn">
-              <span>削除</span>
-              <mat-icon>warning</mat-icon>
-            </button>
-            <button mat-stroked-button color="primary" class="todoList__btn">
-              <span>編集</span>
-              <mat-icon>edit</mat-icon>
+            <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
+              <span>詳細へ</span>
+              <mat-icon>chevron_right</mat-icon>
             </button>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
-    </ng-container> -->
+    </ng-container>
   </mat-tab>
 </mat-tab-group>
