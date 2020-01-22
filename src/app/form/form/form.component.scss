@@ -4,4 +4,10 @@
   &__item {
     width: 100%;
   }
+  button {
+    margin-bottom: 32px;
+    @include tab {
+      margin: 0;
+    }
+  }
 }
