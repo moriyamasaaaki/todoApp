@@ -12,11 +12,13 @@
                 {{ todo.createdAt.toDate() | date: 'yyy年MM月dd日HH:mm' }}
               </mat-panel-description>
             </mat-expansion-panel-header>
+            <div class="todoList__content">
             <p>{{todo.content}}</p>
             <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
               <span>詳細へ</span>
               <mat-icon>chevron_right</mat-icon>
             </button>
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
@@ -36,11 +38,13 @@
                 {{ todo.createdAt.toDate() | date: 'yyy年MM月dd日HH:mm' }}
               </mat-panel-description>
             </mat-expansion-panel-header>
+            <div class="todoList__content">
             <p>{{todo.content}}</p>
             <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
               <span>詳細へ</span>
               <mat-icon>chevron_right</mat-icon>
             </button>
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
@@ -60,11 +64,13 @@
                 {{ todo.createdAt.toDate() | date: 'yyy年MM月dd日HH:mm' }}
               </mat-panel-description>
             </mat-expansion-panel-header>
+            <div class="todoList__content">
             <p>{{todo.content}}</p>
             <button routerLink="/detail/{{ todo.id }}" mat-stroked-button color="primary" class="todoList__btn">
               <span>詳細へ</span>
               <mat-icon>chevron_right</mat-icon>
             </button>
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </div>

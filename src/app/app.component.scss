@@ -2,6 +2,10 @@
 
 footer {
   background-color: #3f51b5;
+  margin-top: 72px;
+  @include tab {
+    margin: 0;
+  }
   p {
     text-align: center;
     color: #fff;
