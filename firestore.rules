@@ -2,7 +2,11 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /todos/{id} {
-      allow read, write: if true;
+      allow read: if request.auth.uid == resource.data.userId || resource.data.category == '仕事' && resource.data.category == 'プライベート' && resource.data.category == 'その他';
+      allow create: if request.auth.uid != null;
+      allow update, delete: if request.auth.uid == resource.data.userId;
     }
   }
 }
+
+
