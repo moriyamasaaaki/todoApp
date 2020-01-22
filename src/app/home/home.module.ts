@@ -19,7 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 
@@ -40,7 +40,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatTabsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule
   ]
 })
 export class HomeModule { }

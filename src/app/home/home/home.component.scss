@@ -1,0 +1,21 @@
+@import 'mixins';
+
+.example-container {
+  width: 100%;
+  height: 100%;
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
+
+.home-mobile {
+  display: block;
+  @include tab {
+    display: none;
+  }
+}
+
+.side-bar {
+  width: 25%;
+}
