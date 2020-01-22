@@ -51,26 +51,27 @@ export class TodoService {
     });
   }
 
-  getCategoryWorks(): Observable<Todo[]> {
+  getCategoryWorks(userId: string): Observable<Todo[]> {
+    console.log(userId);
     return this.db
     .collection<Todo>('todos', ref => {
-      return ref.where('category', '==', '仕事');
+      return ref.where('userId', '==', userId).where('category', '==', '仕事');
     })
     .valueChanges();
   }
 
-  getCategoryPrivates(): Observable<Todo[]> {
+  getCategoryPrivates(userId: string): Observable<Todo[]> {
     return this.db
       .collection<Todo>('todos', ref => {
-        return ref.where('category', '==', 'プライベート');
+        return ref.where('userId', '==', userId).where('category', '==', 'プライベート');
       })
       .valueChanges();
   }
 
-  getCategoryOthers(): Observable<Todo[]> {
+  getCategoryOthers(userId: string): Observable<Todo[]> {
     return this.db
       .collection<Todo>('todos', ref => {
-        return ref.where('category', '==', 'その他');
+        return ref.where('userId', '==', userId).where('category', '==', 'その他');
       })
       .valueChanges();
   }
