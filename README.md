@@ -1,5 +1,5 @@
 # TodoApp/Todo管理
-
+URL: https://todo-app-58cf0.firebaseapp.com/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Development server
