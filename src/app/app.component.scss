@@ -1,19 +1,1 @@
 @import 'mixins';
-
-footer {
-  background-color: #3f51b5;
-  margin-top: 72px;
-  @include tab {
-    margin: 0;
-  }
-  p {
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    margin: 0;
-    padding: 24px 0;
-    @include pc {
-      font-size: 14px;
-    }
-  }
-}
